@@ -1,0 +1,49 @@
+html {
+	background-color: #ffcc00;
+}
+
+.header {
+	font-family: impact;
+	font-style: bold;
+	font-size: 50px;
+	color: yellow;
+	text-decoration: underline;
+}
+
+div {
+	background-color: blue;
+}
+
+/* Text to go with the PHA Logo */
+h1 {
+	color: yellow;
+	font-size: 2em;
+	font-family: Impact, serif;
+}
+
+/* First paragraph under the header */
+p {
+	font-size: 1.5em;
+	font-family: Impact, serif;
+	background-color: blue;
+	color: yellow;
+}
+
+.button {
+	height: 50px;
+	width: 120px;
+	color: yellow;
+	border-color: yellow;
+	background-color: blue;
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 5px;
+	margin: auto;
+	text-align: center;
+}
+
+div a {
+	text-align: center;
+	color: white;
+	text-decoration: none;	
+}
