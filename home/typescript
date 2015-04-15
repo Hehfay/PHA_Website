@@ -1,0 +1,20 @@
+Script started on Mon, Oct 27, 2014  3:14:50 AM
+]0;/cygdrive/c/Fall 2014/Database Management/wamp/www/PHA
+[32mJeff@Lenovo-PC [33m/cygdrive/c/Fall 2014/Database Management/wamp/www/PHA[0m
+$ rub [Ky script.rb
+bash: ruby: command not found
+]0;/cygdrive/c/Fall 2014/Database Management/wamp/www/PHA
+[32mJeff@Lenovo-PC [33m/cygdrive/c/Fall 2014/Database Management/wamp/www/PHA[0m
+$ vim r[Kscript.rb
+7[?47h[27m[24m[0m[H[J[25;1H"script.rb" [readonly][dos format] 4 lines, 51 characters[1;1H#!/usr/bin/env ruby
+#
+prints "Ruby is great."
+
+[1m[34m~                                                                                                                                                     [6;1H~                                                                                                                                                     [7;1H~                                                                                                                                                     [8;1H~                                                                                                                                                     [9;1H~                                                                                                                                                     [10;1H~                                                                                                                                                     [11;1H~                                                                                                                                                     [12;1H~                                                                                                                                                     [13;1H~                                                                                                                                                     [14;1H~                                                                                                                                                     [15;1H~                                                                                                                                                     [16;1H~                                                                                                                                                     [17;1H~                                                                                                                                                     [18;1H~                                                                                                                                                     [19;1H~                                                                                                                                                     [20;1H~                                                                                                                                                     [21;1H~                                                                                                                                                     [22;1H~                                                                                                                                                     [23;1H~                                                                                                                                                     [24;1H~                                                                                                                                                     [1;1H
+[1;1H
+[0m[25;1H[1m[31mW10: Warning: Changing a readonly file[0m[25;39H[K[2;2H[25;1H[K[25;1H:q[25;1H[K[25;1H[2J[?47l8]0;/cygdrive/c/Fall 2014/Database Management/wamp/www/PHA
+[32mJeff@Lenovo-PC [33m/cygdrive/c/Fall 2014/Database Management/wamp/www/PHA[0m
+$ exit
+exit
+
+Script done on Mon, Oct 27, 2014  3:15:30 AM

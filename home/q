@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="/pha/style.css"/>
+	<title>PHA | Home</title>	
+</head>
+<body>
+<div>
+			<a href=""><li><img src="http://www.universityloveconnection.com/templates/new-blue/images/greek/president's-house-association.gif"/></a>
+		<ul>
+			<a href=""><li>Home</li></a>
+			<a href="/pha/photos.html"><li>Photos</li></a>
+			<a href="/pha/active_members.php"><li>Active Members</li></a>
+			<a href="/pha/alumni.php"><li>Alumni</li></a>
+			<a href="/pha/donate.html"><li>Donate</li></a>
+		</ul>
+</div>
+	
+	<p>Welcome to the PHA website.</p>		
+</body>
+</html>
+
+<!--	<div class="button"><a href="http://www.paypal.com" id="Donate_Text">Donate Now</a></div> -->
