@@ -18,6 +18,7 @@ echo "<title>PHA | ".ucwords(end($name))."</title>";
 </ul>
 <?php
 require_once "global.php";
+require_once "login.php";
 echo "<p>Welcome to the President's House Association website.<br>";
 $this_many = date("Y") - FOUNDING_YEAR;
 echo "Celebrating $this_many years of excellence.<br> Checkout where some of our Alumini are living:</p>";
@@ -36,7 +37,7 @@ else
   $query = "select Address_Line_1, City, State from Alumni where Address_Line_1 != 'TODO'";
   if($result = $mysqli->query($query))
   {
-    for($i = 0; $i < 40; $i++) // TODO Allow user to view alum locations by class.
+    for($i = 0; $i < 50; $i++) // TODO Allow user to view alum locations by class.
     {
       $row = $result->fetch_row();
       $img_src .= $row[0]." ".$row[1]." ".$row[2]."|";
