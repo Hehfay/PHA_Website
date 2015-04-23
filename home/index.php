@@ -37,16 +37,14 @@ else
   $query = "select Address_Line_1, City, State from Alumni where Address_Line_1 != 'TODO'";
   if($result = $mysqli->query($query))
   {
-    for($i = 0; $i < 50; $i++) // TODO Allow user to view alum locations by class.
+    for($i = 0; $i < 40; $i++) // TODO Allow user to view alum locations by class.
     {
       $row = $result->fetch_row();
       $img_src .= $row[0]." ".$row[1]." ".$row[2]."|";
     }
     rtrim($img_src, "|");
     $img_src .= "\">";
-
     echo "<img src=$img_src";
-    echo "</img>";
   }
   else
   {
