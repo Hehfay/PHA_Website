@@ -1,0 +1,28 @@
+html{
+  margin-left: 1em;
+/*  background-image: url("bgimage.jpg"); */
+}
+
+h1{
+  color: black;
+}
+
+h2{
+  color: black;
+}
+
+#errmsg{
+  color: grey;
+}
+
+#course {
+  margin-bottom: 1em;
+  margin-right: 50%;
+  background-color: #D6DEDC;
+  border-radius: 25px;
+  padding: 1em;
+}
+
+a{
+  text-decoration: none;
+}

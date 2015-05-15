@@ -1,0 +1,8 @@
+USE test;
+
+DROP TABLE if EXISTS state;
+CREATE TABLE state(
+  abbreviation CHAR(2),
+  name         VARCHAR(14),
+  PRIMARY KEY(abbreviation)
+)ENGINE InnoDB;

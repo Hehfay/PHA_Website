@@ -1,0 +1,174 @@
+USE test;
+
+DROP TABLE if EXISTS participants;
+DROP TABLE if EXISTS course;
+DROP TABLE if EXISTS student;
+DROP TABLE if EXISTS teacher;
+
+CREATE TABLE student(
+  first_name           VARCHAR(50) NOT NULL,
+  middle_name          VARCHAR(50),
+  last_name            VARCHAR(50) NOT NULL,
+	username 						 VARCHAR(16) NOT NULL UNIQUE,
+	passcode						 VARCHAR(16) NOT NULL,
+  id                   INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  address_line_1       VARCHAR(100) NOT NULL,
+  address_line_2       VARCHAR(100),
+  city                 VARCHAR(50) NOT NULL,
+  state                CHAR(2) NOT NULL,
+  zip                  VARCHAR(10) NOT NULL,
+  email                VARCHAR(50) NOT NULL,
+  home_phone           CHAR(11),
+  cell_phone           CHAR(11),
+  num_courses_enrolled TINYINT DEFAULT 0,
+  PRIMARY KEY(id),
+	FOREIGN KEY(state) REFERENCES state(abbreviation)
+		ON DELETE NO ACTION
+		ON UPDATE NO ACTION
+)ENGINE InnoDB;
+
+CREATE TABLE teacher(
+  first_name VARCHAR(50) NOT NULL,
+  last_name  VARCHAR(50) NOT NULL,
+  id         INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY(id)
+)ENGINE InnoDB;
+
+CREATE TABLE course(
+  name           CHAR(6) NOT NULL,
+  title          VARCHAR(255) NOT NULL,
+  description    TEXT NOT NULL,
+  section        CHAR(1),
+  credits        TINYINT,
+  teacher_id     INT UNSIGNED,
+  days           VARCHAR(5),
+  course_time    VARCHAR(11),
+  max_enroll     INT,
+  current_enroll INT DEFAULT 0,
+	id             INT UNSIGNED AUTO_INCREMENT,
+  PRIMARY KEY(id),
+	FOREIGN KEY(teacher_id) REFERENCES teacher(id)
+		ON DELETE NO ACTION
+		ON UPDATE NO ACTION,
+	UNIQUE unique_index(name, section)
+)ENGINE InnoDB;
+
+CREATE TABLE participants(
+	student_id INT UNSIGNED,
+	course_id  INT UNSIGNED,
+	FOREIGN KEY(student_id) REFERENCES student(id)
+		ON DELETE NO ACTION
+		ON UPDATE NO ACTION,
+	FOREIGN KEY(course_id) REFERENCES course(id)
+		ON DELETE NO ACTION
+		ON UPDATE NO ACTION
+)ENGINE InnoDB;
+
+INSERT INTO teacher(first_name, last_name) VALUES('Homer', 'White');
+INSERT INTO teacher(first_name, last_name) VALUES('William', 'Harris');
+INSERT INTO teacher(first_name, last_name) VALUES('Jonathan', 'Dickinson');
+INSERT INTO teacher(first_name, last_name) VALUES('Danny', 'Thorne');
+INSERT INTO teacher(first_name, last_name) VALUES('Bryan', 'Crawley');
+INSERT INTO teacher(first_name, last_name) VALUES('Cristine', 'Leverenz');
+INSERT INTO teacher(first_name, last_name) VALUES('Luke', 'Garnett');
+INSERT INTO teacher(first_name, last_name) VALUES('David', 'Bowman');
+
+
+INSERT INTO course(name, title, description, section, credits, teacher_id, days, course_time, max_enroll, current_enroll)
+VALUES(
+    'PHY103'
+  , 'Astronomy'
+  , 'Covers the earth, moon, planets, sun, stars, galaxy, universe; occasional use of planetarium. No laboratory.'
+  , 'A'
+  , 3
+  , 3
+  , 'TR'
+  , '9:30-10:45'
+  , 10
+  , 0
+);
+
+INSERT INTO course(name, title, description, section, credits, teacher_id, days, course_time, max_enroll, current_enroll)
+VALUES(
+    'PHY211'
+  , 'College Physics I'
+  , 'First course in an introductory, algebra-based, physics sequence for college students. Topics include mechanics, heat, thermodynamics, sound, and waves. Laboratory.'
+  , 'A'
+  , 4
+  , 3
+  , 'MTWRF'
+  , '12:00-12:50'
+  , 30
+  , 0
+);
+
+INSERT INTO course(name, title, description, section, credits, teacher_id, days, course_time, max_enroll, current_enroll)
+VALUES(
+    'PHY313'
+  , 'Thermal Physics'
+  , 'Basic principles of thermal and statistical physics; laws of thermodynamics; equilibrium and irreversibility; cyclic processes; ensembles; thermodynamic potentials; canonical distribution; equipartition theorem; Maxwell distribution; phase changes; applications.'
+  , 'A'
+  , 3
+  , 8
+  , 'TR'
+  , '9:30-10:45'
+  , 10
+  , 0
+);
+
+INSERT INTO course(name, title, description, section, credits, teacher_id, days, course_time, max_enroll, current_enroll)
+VALUES(
+    'PHY317'
+  , 'Statics'
+  , 'Application of the conditions of equilibrium to two and three dimensional systems; trusses, frames, and beams; friction; shear and bending moment diagrams; centroids; centers of gravity, area and mass moments of inertia, vectors.'
+  , 'A'
+  , 3
+  , 8
+  , 'TR'
+  , '12:45-2:00'
+  , 10
+  , 0
+);
+
+INSERT INTO course(name, title, description, section, credits, teacher_id, days, course_time, max_enroll, current_enroll)
+VALUES(
+    'PHY343'
+  , 'Relativity & Modern Physics'
+  , 'Special relativity, introduction to general relativity, introduction to quantum physics, hydrogen atom and complex atoms, atomic spectra, topics in nuclear and solid-state physics.'
+  , 'A'
+  , 3
+  , 8
+  , 'MWF'
+  , '9:00-9:50'
+  , 10
+  , 0
+);
+
+INSERT INTO course(name, title, description, section, credits, teacher_id, days, course_time, max_enroll, current_enroll)
+VALUES(
+    'PHY405'
+  , 'Electricity and Magnetism'
+  , 'Theory of the behavior of electric and magnetic fields and their sources including Maxwell\'s equations.'
+  , 'A'
+  , 3
+  , 8
+  , 'MWF'
+  , '1:00-1:50'
+  , 10
+  , 0
+);
+
+INSERT INTO student(first_name, middle_name, last_name, username, passcode, address_line_1, city, state, zip, email, cell_phone)
+VALUES(
+    'Jeffrey'
+  , 'Paul'
+  , 'Hartman'
+  , 'jhartma0'
+  , 'helloworld'
+  , '6037 Holly Lane'
+  , 'Farmington'
+  , 'NY'
+  , '14425'
+  , 'jeffrey.hartman4691@gmail.com'
+  , '9126600546'
+);

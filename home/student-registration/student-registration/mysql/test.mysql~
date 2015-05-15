@@ -1,0 +1,38 @@
+use test;
+
+insert into teacher(first_name, last_name, id)
+						values('Danny', 'Thorne', 1);
+insert into teacher(first_name, last_name, id)
+						values('Homer', 'White', 2);
+insert into teacher(first_name, last_name, id)
+						values('William', 'Harris', 3);
+insert into teacher(first_name, last_name, id)
+						values('Johnathan', 'Dickinson', 4);
+insert into teacher(first_name, last_name, id)
+						values('Bryan', 'Crawley', 5);
+insert into teacher(first_name, last_name, id)
+						values('David', 'Bowman', 6);
+
+insert into course(
+	name,
+	description,
+	section,
+	credits,
+	teacher_id,
+	days,
+	course_time,
+	max_enroll,
+	current_enroll
+) 
+
+values(
+	'CSC 100',
+	'Mathematics and Computing. A survey of computer science including some basic mathematical foundations of computing and a gentle introduction to computer programming. This course carries the Quantitative Flag (Q) in the Foundations and Core Program.',
+	'A',
+	3,
+	1,
+	'MWF',
+	'01:00PM',
+	30,
+	0
+);
